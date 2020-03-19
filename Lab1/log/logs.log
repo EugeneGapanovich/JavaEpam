@@ -1,0 +1,87 @@
+21:46:14.725 [main] ERROR by.epam.carrental.dao.Controller - UPDATE FAILED
+21:48:05.307 [main] INFO  by.epam.carrental.dao.Controller - Client{name: ttt; surname: tttt; phone number: +null; age: 0; gender: null; driving experience: 0.0 years; category: 'null'} ADDED
+21:58:29.187 [main] INFO  by.epam.carrental.dao.Controller - Client{name: tt; surname: ttt; phone number: +null; age: 0; gender: null; driving experience: 0.0 years; category: 'null'} ADDED
+21:58:29.190 [main] INFO  by.epam.carrental.dao.Controller - Client{name: tt; surname: ttt; phone number: +null; age: 0; gender: null; driving experience: 0.0 years; category: 'null'}
+ OBJECT DELETED SUCCESSFULLY
+18:11:54.586 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+18:13:52.896 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+18:16:38.648 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+18:29:12.039 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+18:29:51.112 [main] INFO  by.epam.carrental.dao.Controller - Client{name: 37533; surname: ttt; phone number: +null; age: 19; gender: MALE; driving experience: 1.0 years; category: ''} ADDED
+18:45:42.686 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+18:46:00.940 [main] INFO  by.epam.carrental.dao.Controller - Client{name: t; surname: tt; phone number: +37533; age: 19; gender: MALE; driving experience: 1.0 years; category: ''} ADDED
+18:46:43.805 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+18:47:03.473 [main] INFO  by.epam.carrental.dao.Controller - Client{name: F; surname: L; phone number: +37533; age: 19; gender: MALE; driving experience: 1.0 years; category: ''} ADDED
+18:47:40.732 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+18:49:38.028 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+18:50:48.398 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+18:50:58.445 [main] INFO  by.epam.carrental.dao.Controller - Client{name: t; surname: tt; phone number: +3; age: 19; gender: MALE; driving experience: 1.0 years; category: ''} ADDED
+18:54:11.880 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+18:54:49.506 [main] INFO  by.epam.carrental.dao.Controller - Car{name: SKODA; model: RAPID; year of car manufacture: 2018; price per hour: 10.0; id: 0} ADDED
+18:56:29.191 [main] INFO  by.epam.carrental.dao.Controller - Car{name: BMW; model: X5; year of car manufacture: 2015; price per hour: 20.0; id: 0} ADDED
+19:00:08.364 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+19:00:40.312 [main] INFO  by.epam.carrental.dao.Controller - Car{name: SKODA; model: RAPID; year of car manufacture: 2016; price per hour: 20.0 BYN; id: 10} ADDED
+19:01:10.453 [main] INFO  by.epam.carrental.dao.Controller - Car{name: BMW; model: X5; year of car manufacture: 2015; price per hour: 15.0 BYN; id: 11} ADDED
+19:02:04.655 [main] INFO  by.epam.carrental.dao.Controller - Car{name: BWM; model: X5; year of car manufacture: 2015; price per hour: 10.0 BYN; id: 11} UPDATE SUCCESS
+19:02:04.655 [main] ERROR by.epam.carrental.dao.Controller - UPDATE FAILED
+19:03:36.423 [main] INFO  by.epam.carrental.dao.Controller - Car{name: BWM; model: X5; year of car manufacture: 2015; price per hour: 10.0 BYN; id: 11}
+ OBJECT DELETED SUCCESSFULLY
+19:03:51.199 [main] INFO  by.epam.carrental.dao.Controller - 1 OBJECTS SAVED
+19:03:55.792 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+19:06:19.825 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+19:08:42.071 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+19:12:38.889 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+19:12:54.270 [main] INFO  by.epam.carrental.dao.Controller - Client{name: Eugene; surname: Gapanovich; phone number: +37533; age: 19; gender: MALE; driving experience: 1.0 years; category: ''} ADDED
+19:39:12.512 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+19:39:34.658 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS SAVED
+19:39:38.511 [main] INFO  by.epam.carrental.dao.Controller - 1 OBJECTS READ SUCCESSFULLY
+19:39:47.421 [main] INFO  by.epam.carrental.dao.Controller - 1 OBJECTS SAVED
+19:39:48.035 [main] ERROR by.epam.carrental.dao.Controller - java.io.EOFException
+19:39:51.907 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS SAVED
+19:39:53.225 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS READ SUCCESSFULLY
+19:40:50.910 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS READ SUCCESSFULLY
+19:41:01.474 [main] INFO  by.epam.carrental.dao.Controller - Client{name: T; surname: TT; phone number: +375; age: 19; gender: MALE; driving experience: 2.0 years; category: ''} ADDED
+19:43:14.855 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS READ SUCCESSFULLY
+19:43:53.399 [main] INFO  by.epam.carrental.dao.Controller - Client{name: t; surname: TT; phone number: +37533; age: 19; gender: MALE; driving experience: 2.0 years; category: ''} ADDED
+19:46:58.443 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS READ SUCCESSFULLY
+19:47:38.025 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS READ SUCCESSFULLY
+19:48:57.291 [main] INFO  by.epam.carrental.dao.Controller - Client{name: T; surname: TT; phone number: +37533; age: 19; gender: MALE; driving experience: 2.0 years; category: 'b'} ADDED
+19:50:13.338 [main] INFO  by.epam.carrental.dao.Controller - Client{name: T; surname: TT; phone number: +375333; age: 20; gender: MALE; driving experience: 1.0 years; category: 'b'} ADDED
+19:50:39.852 [main] INFO  by.epam.carrental.dao.Controller - Client{name: T; surname: TT; phone number: +37533; age: 20; gender: MALE; driving experience: 2.0 years; category: 'b'} UPDATE SUCCESS
+19:51:09.953 [main] INFO  by.epam.carrental.dao.Controller - Client{name: T; surname: TT; phone number: +37533; age: 20; gender: MALE; driving experience: 2.0 years; category: 'b'} UPDATE SUCCESS
+19:52:00.268 [main] INFO  by.epam.carrental.dao.Controller - Client{name: T; surname: TT; phone number: +37533; age: 20; gender: MALE; driving experience: 2.0 years; category: 'b'}
+ OBJECT DELETED SUCCESSFULLY
+19:52:24.454 [main] INFO  by.epam.carrental.dao.Controller - 1 OBJECTS SAVED
+19:52:48.187 [main] INFO  by.epam.carrental.dao.Controller - 1 OBJECTS READ SUCCESSFULLY
+19:53:32.791 [main] INFO  by.epam.carrental.dao.Controller - Car{name: SKODA; model: X5; year of car manufacture: 2015; price per hour: 20.0 BYN; id: 10} ADDED
+19:56:38.210 [main] INFO  by.epam.carrental.dao.Controller - Car{name: BMW; model: X5; year of car manufacture: 2015; price per hour: 10.0 BYN; id: 5} ADDED
+19:57:15.193 [main] INFO  by.epam.carrental.dao.Controller - Car{name: SKODA; model: RAPID; year of car manufacture: 2016; price per hour: 15.0 BYN; id: 10} UPDATE SUCCESS
+19:57:15.193 [main] INFO  by.epam.carrental.dao.Controller - Car{name: SKODA; model: RAPID; year of car manufacture: 2016; price per hour: 15.0 BYN; id: 10} UPDATE SUCCESS
+19:57:41.203 [main] INFO  by.epam.carrental.dao.Controller - Car{name: BMW; model: X5; year of car manufacture: 2015; price per hour: 10.0 BYN; id: 5}
+ OBJECT DELETED SUCCESSFULLY
+19:59:22.765 [main] INFO  by.epam.carrental.dao.Controller - 2 OBJECTS SAVED
+19:59:24.905 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS READ SUCCESSFULLY
+20:00:23.035 [main] INFO  by.epam.carrental.dao.Controller - Order{name: name; surname: surname; number phone: 375; age: 19; gender: MALE; driving experience: 2.0 years; category: B; car name: skoda; model: rapid; year of car manufacture: 2016; car id: 5; price per hour: 20.0; time: 10 hours} ADDED
+20:01:17.349 [main] INFO  by.epam.carrental.dao.Controller - Order{name: NAME; surname: surname; number phone: 375; age: 19; gender: MALE; driving experience: 2.0 years; category: B; car name: skoda; model: rapid; year of car manufacture: 2016; car id: 20; price per hour: 5.0; time: 10 hours}
+ OBJECT DELETED SUCCESSFULLY
+21:14:05.989 [main] ERROR by.epam.carrental.dao.Controller - java.io.InvalidClassException: by.epam.carrental.entity.Client; local class incompatible: stream classdesc serialVersionUID = -4986463857619585186, local class serialVersionUID = -2373928141768313777
+21:15:10.191 [main] INFO  by.epam.carrental.dao.Controller - Client{name: T; surname: T; phone number: +375; age: 19; gender: MALE; driving experience: ; category: 'b'} ADDED
+21:15:24.625 [main] ERROR by.epam.carrental.dao.Controller - java.io.InvalidClassException: by.epam.carrental.entity.Client; local class incompatible: stream classdesc serialVersionUID = -4986463857619585186, local class serialVersionUID = -2373928141768313777
+21:16:21.846 [main] ERROR by.epam.carrental.dao.Controller - java.io.InvalidClassException: by.epam.carrental.entity.Client; local class incompatible: stream classdesc serialVersionUID = -4986463857619585186, local class serialVersionUID = -2373928141768313777
+21:16:45.233 [main] INFO  by.epam.carrental.dao.Controller - Client{name: T; surname: TT; phone number: +375; age: 19; gender: MALE; driving experience: YES; category: 'B'} ADDED
+21:38:01.665 [main] ERROR by.epam.carrental.dao.Controller - java.io.InvalidClassException: by.epam.carrental.entity.Client; local class incompatible: stream classdesc serialVersionUID = -4986463857619585186, local class serialVersionUID = -2373928141768313777
+21:39:38.124 [main] INFO  by.epam.carrental.dao.Controller - Client{name: Ivan; surname: Marchenko; phone number: +21324324; age: 20; gender: MALE; driving experience: 1; category: 'A'} ADDED
+21:41:44.338 [main] INFO  by.epam.carrental.dao.Controller - Client{name: Ivan; surname: Marchenko; phone number: +21324324; age: 20; gender: MALE; driving experience: 1; category: 'A'}
+ OBJECT DELETED SUCCESSFULLY
+21:43:12.319 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS SAVED
+21:43:16.752 [main] INFO  by.epam.carrental.dao.Controller - 2 OBJECTS READ SUCCESSFULLY
+21:43:19.670 [main] INFO  by.epam.carrental.dao.Controller - 2 OBJECTS SAVED
+21:52:51.022 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS READ SUCCESSFULLY
+21:54:06.391 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS READ SUCCESSFULLY
+21:55:26.553 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS READ SUCCESSFULLY
+22:06:46.762 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS READ SUCCESSFULLY
+22:06:48.710 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS SAVED
+22:06:49.415 [main] INFO  by.epam.carrental.dao.Controller - 2 OBJECTS READ SUCCESSFULLY
+22:06:50.958 [main] INFO  by.epam.carrental.dao.Controller - 2 OBJECTS SAVED
+22:06:51.588 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS READ SUCCESSFULLY
+22:06:54.893 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS SAVED
