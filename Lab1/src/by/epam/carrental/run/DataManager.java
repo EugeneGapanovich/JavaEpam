@@ -7,6 +7,9 @@ import by.epam.carrental.dao.UserController;
 import by.epam.carrental.entity.Car;
 import by.epam.carrental.entity.Client;
 import by.epam.carrental.entity.Order;
+import by.epam.carrental.service.CarService;
+import by.epam.carrental.service.OrderService;
+import by.epam.carrental.service.UserService;
 
 import java.util.Scanner;
 
@@ -40,7 +43,7 @@ public class DataManager {
     }
 
     private static void userManager() {
-        UserController controller = new UserController();
+        UserService controller = new UserService();
         controller.read();
         while (true) {
             System.out.println("Choose what to do: \n1.Add\n2.Delete\n3.Update\n4.Show All\n0.Back");
@@ -73,7 +76,7 @@ public class DataManager {
     }
 
     private static void carManager() {
-        CarController controller = new CarController();
+        CarService controller = new CarService();
         controller.read();
         while (true) {
             System.out.println("Choose what to do: \n1.Add\n2.Delete\n3.Update\n4.Show All\n0.Back");
@@ -106,7 +109,7 @@ public class DataManager {
     }
 
     private static void orderManager() {
-        OrderController controller = new OrderController();
+        OrderService controller = new OrderService();
         controller.read();
         while (true) {
             System.out.println("Choose what to do: \n1.Add\n2.Delete\n3.Update\n4.Show All\n0.Back");

@@ -85,3 +85,25 @@
 22:06:50.958 [main] INFO  by.epam.carrental.dao.Controller - 2 OBJECTS SAVED
 22:06:51.588 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS READ SUCCESSFULLY
 22:06:54.893 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS SAVED
+16:26:11.411 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS READ SUCCESSFULLY
+16:26:14.066 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS SAVED
+16:26:15.050 [main] INFO  by.epam.carrental.dao.Controller - 2 OBJECTS READ SUCCESSFULLY
+16:26:16.629 [main] INFO  by.epam.carrental.dao.Controller - 2 OBJECTS SAVED
+16:26:17.441 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS READ SUCCESSFULLY
+16:26:19.923 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS SAVED
+16:26:22.871 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS READ SUCCESSFULLY
+16:26:47.243 [main] INFO  by.epam.carrental.dao.Controller - Client{name: t; surname: tt; phone number: +375; age: 19; gender: MALE; driving experience: yes; category: 'b'} ADDED
+16:27:09.066 [main] INFO  by.epam.carrental.dao.Controller - Client{name: t; surname: tt; phone number: +375; age: 20; gender: MALE; driving experience: yes; category: 'b'} UPDATE SUCCESS
+16:27:37.573 [main] INFO  by.epam.carrental.dao.Controller - Client{name: t; surname: tt; phone number: +375; age: 20; gender: MALE; driving experience: yes; category: 'b'}
+ OBJECT DELETED SUCCESSFULLY
+16:27:45.258 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS SAVED
+16:27:46.472 [main] INFO  by.epam.carrental.dao.Controller - 2 OBJECTS READ SUCCESSFULLY
+16:27:56.073 [main] INFO  by.epam.carrental.dao.Controller - Car{name: t; model: tt; year of car manufacture: 2015; price per hour: 10.0 BYN; id: 1} ADDED
+16:28:08.674 [main] INFO  by.epam.carrental.dao.Controller - Car{name: t; model: tt; year of car manufacture: 2015; price per hour: 10.0 BYN; id: 1}
+ OBJECT DELETED SUCCESSFULLY
+16:29:55.957 [main] INFO  by.epam.carrental.dao.Controller - Car{name: SKODA; model: RAPID; year of car manufacture: 2016; price per hour: 15.0 BYN; id: 10}
+ OBJECT DELETED SUCCESSFULLY
+16:30:26.128 [main] INFO  by.epam.carrental.dao.Controller - Car{name: SKODA; model: RAPID; year of car manufacture: 2016; price per hour: 15.0 BYN; id: 10}
+ OBJECT DELETED SUCCESSFULLY
+16:30:29.550 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS SAVED
+16:30:31.184 [main] INFO  by.epam.carrental.dao.Controller - 0 OBJECTS READ SUCCESSFULLY
