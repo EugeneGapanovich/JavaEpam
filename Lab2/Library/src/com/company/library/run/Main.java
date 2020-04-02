@@ -2,9 +2,11 @@ package com.company.library.run;
 
 import com.company.library.entity.Author;
 import com.company.library.entity.Book;
+import com.company.library.manipulation.BookStream;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -54,6 +56,9 @@ public class Main {
         for (int i = 0; i < books.size(); i++) {
             System.out.println(books.get(i));
         }
-
+        BookStream bStream = new BookStream();
+        System.out.println(bStream.isExistMoreThanTwoHundredPages(books));
+        System.out.println(bStream.findBooksWithTheMaxNumberOfPages(books));
+        System.out.println(bStream.findBooksWithTheMinNumberOfPages(books));
     }
 }

@@ -48,6 +48,12 @@ public class Book {
         this.authors.remove(author);
     }
 
+    public static int compareByPages (Book p1, Book p2){
+        if(p1.getNumberOfPages() > p2.getNumberOfPages())
+            return 1;
+        return -1;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -68,6 +74,8 @@ public class Book {
         StringBuilder str = new StringBuilder();
         str.append("Book{");
         str.append("title='").append(title).append('\'');
+        str.append("; ");
+        str.append("count of pages='").append(numberOfPages).append('\'');
         str.append("; ");
         str.append("count of authors='").append(authors.size());
         str.append('\'');
