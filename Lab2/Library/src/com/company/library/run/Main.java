@@ -57,8 +57,23 @@ public class Main {
             System.out.println(books.get(i));
         }
         BookStream bStream = new BookStream();
+        System.out.println("Exist more than two hundred pages: ");
         System.out.println(bStream.isExistMoreThanTwoHundredPages(books));
-        System.out.println(bStream.findBooksWithTheMaxNumberOfPages(books));
-        System.out.println(bStream.findBooksWithTheMinNumberOfPages(books));
+        System.out.println("Find book with the max number of pages: ");
+        System.out.println(bStream.findBookWithTheMaxNumberOfPages(books));
+        System.out.println("Find book with the min number of pages: ");
+        System.out.println(bStream.findBookWithTheMinNumberOfPages(books));
+        System.out.println("Get books with one author: ");
+        System.out.println(bStream.getBooksWithOneAuthor(books));
+        System.out.println("Sorted books by title: ");
+        System.out.println(bStream.sortBookByTitle(books));
+        System.out.println("Sorted books by number of pages: ");
+        System.out.println(bStream.sortBookByNumberOfPages(books));
+        System.out.println("List of authors: ");
+        System.out.println(bStream.getListOfAuthors(books));
+        System.out.println("Print list of authors: ");
+        bStream.printListOfAuthors(books);
+        System.out.println("List of distinct authors: ");
+        System.out.println(bStream.getListOfDistinctAuthors(books));
     }
 }
