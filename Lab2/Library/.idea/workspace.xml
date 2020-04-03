@@ -29,7 +29,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="E:/Загрузки/Main.java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/log4j-core-2.7.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunManager">
@@ -68,7 +71,7 @@
       <workItem from="1585852078634" duration="7603000" />
       <workItem from="1585860319392" duration="308000" />
       <workItem from="1585861418236" duration="140000" />
-      <workItem from="1585896791268" duration="13133000" />
+      <workItem from="1585896791268" duration="13456000" />
     </task>
     <servers />
   </component>
@@ -80,10 +83,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="574" y="137" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1585840103555" />
-    <state x="549" y="176" key="FileChooserDialogImpl" timestamp="1585909471410">
+    <state x="549" y="176" key="FileChooserDialogImpl" timestamp="1585910337571">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="176" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1585909471410" />
+    <state x="549" y="176" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1585910337571" />
     <state width="1537" height="221" key="GridCell.Tab.0.bottom" timestamp="1585909938336">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -100,10 +103,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1537" height="221" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1585909938336" />
-    <state x="279" y="63" key="SettingsEditor" timestamp="1585908997327">
+    <state x="279" y="0" key="SettingsEditor" timestamp="1585910343326">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="279" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1585908997327" />
+    <state x="279" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1585910343326" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1585898448203">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
