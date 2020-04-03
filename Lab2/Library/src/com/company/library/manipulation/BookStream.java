@@ -7,9 +7,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class BookStream {
 
@@ -17,23 +15,32 @@ public class BookStream {
         return books.stream().anyMatch(book -> book.getNumberOfPages() > 200);
     }
 
-    public Book findBookWithTheMinNumberOfPages(List<Book> books){
+    public List findBooksWithTheMinNumberOfPages(List<Book> books){
         Book minBook = books.stream().min(Book::compareByPages).get();
-        return minBook;
+        int minCountPages = minBook.getNumberOfPages();
+        List<Book> booksMin = books.stream().filter(book -> book.getNumberOfPages() == minCountPages).collect(Collectors.toList());
+        return booksMin;
     }
 
-    public Book findBookWithTheMaxNumberOfPages(List<Book> books){
+    public List findBooksWithTheMaxNumberOfPages(List<Book> books){
         Book maxBook = books.stream().max(Book::compareByPages).get();
-        return maxBook;
+        int maxCountPages = maxBook.getNumberOfPages();
+        List<Book> booksMax= books.stream().filter(book -> book.getNumberOfPages() == maxCountPages)
+                .collect(Collectors.toList());
+        return booksMax;
     }
 
     public List getBooksWithOneAuthor(List<Book> books){
-        List<Book> booksWithOneAuthor = books.stream().filter(book -> book.getAuthors().size() == 1).collect(Collectors.toList());
+        List<Book> booksWithOneAuthor = books.stream().filter(book -> book.getAuthors().size() == 1)
+                .peek(book -> System.out.println("Filtered value: " + book))
+                .collect(Collectors.toList());
         return booksWithOneAuthor;
     }
 
     public List sortBookByTitle(List<Book> books){
-        List<Book> bookSort = books.stream().sorted(Comparator.comparing(Book::getTitle)).collect(Collectors.toList());
+        List<Book> bookSort = books.stream().sorted(Comparator.comparing(Book::getTitle))
+                .peek(book -> System.out.println("Filtered value: " + book))
+                .collect(Collectors.toList());
         return bookSort;
     }
 
@@ -54,9 +61,37 @@ public class BookStream {
         System.out.println(listOfAuthors);
     }
 
-    public List getListOfDistinctAuthors(List<Book> books){
+   /* public List getListOfDistinctAuthors(List<Book> books){
         List<Author> listOfAuthors = new ArrayList<>();
         books.stream().forEach(book -> listOfAuthors.addAll(book.getAuthors()));
         return listOfAuthors;
+    }*/
+
+    public List checkTimeSpeedOfSortBookByNumberOfPages(List<Book> books){
+        long nano_startTime = System.nanoTime();
+        List<Book> bookSort = books.stream().sorted(Comparator.comparing(Book::getTitle))
+                .collect(Collectors.toList());
+        long nano_endTime = System.nanoTime();
+        System.out.println("Time taken in nano seconds: "
+                + (nano_endTime - nano_startTime));
+        return bookSort;
+    }
+
+    public List checkTimeSpeedOfSortBookByNumberOfPagesWithParallel(List<Book> books){
+        long nano_startTime = System.nanoTime();
+        List<Book> bookSort = books.stream().parallel().sorted(Comparator.comparing(Book::getTitle))
+                .peek(book -> System.out.println("Filtered value: " + book))
+                .collect(Collectors.toList());
+        long nano_endTime = System.nanoTime();
+        System.out.println("Time taken in nano seconds: "
+                + (nano_endTime - nano_startTime));
+        return bookSort;
+    }
+
+    public List findBooksWithTheMinNumberOfPagesWithOptional(List<Book> books){
+        Optional<Book> minBook = Optional.ofNullable(Optional.of(books.stream().min(Book::compareByPages).get()).orElseThrow(NullPointerException::new));
+        int minCountPages = minBook.get().getNumberOfPages();
+        List<Book> booksMin = books.stream().filter(book -> book.getNumberOfPages() == minCountPages).collect(Collectors.toList());
+        return booksMin;
     }
 }

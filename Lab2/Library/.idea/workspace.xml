@@ -29,7 +29,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/log4j-core-2.7.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -71,7 +71,8 @@
       <workItem from="1585852078634" duration="7603000" />
       <workItem from="1585860319392" duration="308000" />
       <workItem from="1585861418236" duration="140000" />
-      <workItem from="1585896791268" duration="13456000" />
+      <workItem from="1585896791268" duration="19390000" />
+      <workItem from="1585916648180" duration="1690000" />
     </task>
     <servers />
   </component>
@@ -79,30 +80,34 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="361" y="80" key="#Notifications" timestamp="1585912561354">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="80" key="#Notifications/0.0.1536.834@0.0.1536.834" timestamp="1585912561354" />
     <state x="574" y="137" key="#com.intellij.ide.util.MemberChooser" timestamp="1585840103555">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="574" y="137" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1585840103555" />
-    <state x="549" y="176" key="FileChooserDialogImpl" timestamp="1585910337571">
+    <state x="549" y="176" key="FileChooserDialogImpl" timestamp="1585915580813">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="176" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1585910337571" />
-    <state width="1537" height="221" key="GridCell.Tab.0.bottom" timestamp="1585909938336">
+    <state x="549" y="176" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1585915580813" />
+    <state width="1537" height="221" key="GridCell.Tab.0.bottom" timestamp="1585918339426">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1537" height="221" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1585909938336" />
-    <state width="1537" height="221" key="GridCell.Tab.0.center" timestamp="1585909938336">
+    <state width="1537" height="221" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1585918339426" />
+    <state width="1537" height="221" key="GridCell.Tab.0.center" timestamp="1585918339426">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1537" height="221" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1585909938336" />
-    <state width="1537" height="221" key="GridCell.Tab.0.left" timestamp="1585909938336">
+    <state width="1537" height="221" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1585918339426" />
+    <state width="1537" height="221" key="GridCell.Tab.0.left" timestamp="1585918339426">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1537" height="221" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1585909938336" />
-    <state width="1537" height="221" key="GridCell.Tab.0.right" timestamp="1585909938336">
+    <state width="1537" height="221" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1585918339426" />
+    <state width="1537" height="221" key="GridCell.Tab.0.right" timestamp="1585918339426">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1537" height="221" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1585909938336" />
+    <state width="1537" height="221" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1585918339426" />
     <state x="279" y="0" key="SettingsEditor" timestamp="1585910343326">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
