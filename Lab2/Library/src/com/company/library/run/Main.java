@@ -27,6 +27,7 @@ public class Main {
         books.add(new Book("Anthology \"Metro\"", 600));
 
 
+
         authors.get(0).addBook(books.get(5));
         authors.get(0).addBook(books.get(0));
         authors.get(1).addBook(books.get(1));
@@ -69,9 +70,11 @@ public class Main {
         System.out.println("Find books with the min number of pages: ");
         System.out.println(bStream.findBooksWithTheMinNumberOfPages(books));
 
+
         System.out.println("*******************");
         System.out.println("Get books with one author: ");
         System.out.println(bStream.getBooksWithOneAuthor(books));
+
 
         System.out.println("*******************");
         System.out.println("Sorted books by title: ");
@@ -89,7 +92,7 @@ public class Main {
         System.out.println("Print list of authors: ");
         bStream.printListOfAuthors(books);
 
-        /*System.out.println("*******************");
+/*        System.out.println("*******************");
         System.out.println("List of distinct authors: ");
         System.out.println(bStream.getListOfDistinctAuthors(books));*/
 

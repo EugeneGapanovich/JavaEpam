@@ -15,7 +15,7 @@ public class BookStream {
         return books.stream().anyMatch(book -> book.getNumberOfPages() > 200);
     }
 
-    public List findBooksWithTheMinNumberOfPages(List<Book> books){
+    public List findBooksWithTheMinNumberOfPages(List<Book> books) {
         Book minBook = books.stream().min(Book::compareByPages).get();
         int minCountPages = minBook.getNumberOfPages();
         List<Book> booksMin = books.stream().filter(book -> book.getNumberOfPages() == minCountPages).collect(Collectors.toList());
