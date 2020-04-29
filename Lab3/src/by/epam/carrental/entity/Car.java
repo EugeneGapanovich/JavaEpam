@@ -11,12 +11,12 @@ public class Car extends Entity{
     private String model;
     private Integer yearOfCar;
     private BigDecimal price;
-    private Integer id;
+    private long id;
 
     public Car() {
     }
 
-    public Car(String name, String model, Integer yearOfCar, BigDecimal price, Integer id) throws CarException{
+    public Car(String name, String model, Integer yearOfCar, BigDecimal price, long id) throws CarException{
         this.name = name;
         this.model = model;
         setYearOfCar(yearOfCar);
@@ -60,11 +60,11 @@ public class Car extends Entity{
         this.price = price;
     }
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int Integer) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -90,9 +90,9 @@ public class Car extends Entity{
         return "Car{" +
                 "name='" + name + '\'' +
                 ", model='" + model + '\'' +
-                ", year of car=" + yearOfCar +
-                ", price=" + price +
-                ", id=" + id +
+                ", year of car='" + yearOfCar + '\'' +
+                ", price='" + price + '\'' +
+                ", id='" + id + '\'' +
                 '}';
     }
 }

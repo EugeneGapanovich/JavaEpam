@@ -1,57 +1,68 @@
 package by.epam.carrental.run;
 
-import by.epam.carrental.collections.Gender;
+import by.epam.carrental.dao.CarDAO;
+import by.epam.carrental.dao.ClientDAO;
+import by.epam.carrental.dao.DAO;
+import by.epam.carrental.dao.OrderDAO;
 import by.epam.carrental.entity.Car;
 import by.epam.carrental.entity.Client;
 import by.epam.carrental.entity.Order;
 import by.epam.carrental.exception.CarException;
 import by.epam.carrental.exception.UserException;
-/*import by.epam.carrental.service.CarService;
-import by.epam.carrental.service.OrderService;
-import by.epam.carrental.service.UserService;*/
+import com.sun.jdi.LongValue;
+
 
 import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class DataManager {
 
     static Scanner scan = new Scanner(System.in);
 
-    public static void main(String[] args) throws CarException, UserException {
-        try {
-            String dbURL = "jdbc:oracle:thin:eugene/oracle@localhost:1521:orcl";
-            Connection connection = DriverManager.getConnection(dbURL);
-            if (connection != null) {
-                System.out.println("CONNECTED SUCCESSFULLY " + connection);
-            }
-            String sql = "INSERT INTO CAR(CAR_NAME, CAR_MODEL, CAR_YEAR, CAR_PRICE, CAR_ID) VALUES (?, ?, ?, ?, ?)";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, "SKODA");
-            preparedStatement.setString(2, "RAPID");
-            preparedStatement.setInt(3, 2018);
-            preparedStatement.setBigDecimal(4, BigDecimal.valueOf(10.0));
-            preparedStatement.setLong(5, 125);
+    public static void main(String[] args) throws CarException, UserException, SQLException {
 
-            Integer rows = preparedStatement.executeUpdate();
-            if (rows > 0) {
-                System.out.println("CREATED SUCCESSFULLY");
-            } else {
-                throw new Exception("ENTITY IS NOT CREATED");
-            }
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        Car car = new Car("A", "RAPID", 2018, BigDecimal.valueOf(10), (long) 100);
+        Car carr = new Car("W", "X5", 2018, BigDecimal.valueOf(10), (long) 200);
+        Car carUpdated = new Car("SKODA", "RAPIDD", 2019, BigDecimal.valueOf(10), (long) 10);
+        CarDAO carDao = new CarDAO();
+        //carDao.create(car);
+        //carDao.create(carr);
+        //carDao.read("10");
+        //carDao.update(carUpdated);
+        //carDao.delete("10");
+
+        Order order = new Order(10,10,10,10);
+        Order orderr = new Order(30,30,30,30);
+        Order orderUpdated = new Order(30,10,10,20);
+        //OrderDAO orderDao = new OrderDAO();
+        //orderDao.create(order);
+        //orderDao.create(orderr);
+        //orderDao.read("10");
+        //orderDao.update(orderUpdated);
+        //orderDao.delete("10");
+
+        Client client = new Client("CL","cl","+375331234567",20
+                ,"yes","B","MALE",(long) 20);
+        Client clientt = new Client("GF","gf","+375331234569",29
+                ,"yes","B","MALE",(long) 28);
+        Client clientUpdated = new Client("CL","cl","+375331234567",21
+                ,"yes","B","MALE",(long) 20);
+        //ClientDAO clientDao = new ClientDAO();
+        //clientDao.create(client);
+        //clientDao.create(clientt);
+        //clientDao.read("28");
+        //clientDao.update(clientUpdated);
+        //clientDao.delete("20");
     }
 }
-        /*while (true) {
-            System.out.println("Choose what to manage: \n1.User manager\n2.Car manager\n3.Order manager\n0.Exit");
+
+/*        while (true) {
+            System.out.println("Choose what to manage: \n1.CLIENT DATABASE\n2.CAR DATABASE\n3.ORDER DATABASE\n0.Exit");
             int choice = scan.nextInt();
             switch (choice) {
                 case 1: {
-                    userManager();
+                    clientManager();
                     break;
                 }
                 case 2: {
@@ -70,31 +81,29 @@ public class DataManager {
         }
     }
 
-    private static void userManager() throws CarException, UserException {
-        UserService controller = new UserService();
-        controller.read();
+    private static void clientManager() throws CarException, UserException, SQLException {
+        ClientService service = new ClientService();
         while (true) {
-            System.out.println("Choose what to do: \n1.Add\n2.Delete\n3.Update\n4.Show All\n0.Back");
+            System.out.println("Choose what to do: \n1.CREAT\n2.READ\n3.UPDATE\n4.DELETE\n0.Back");
             int choice = scan.nextInt();
             switch (choice) {
                 case 1: {
-                    controller.create(userBuilder());
+                    service.create(clientBuilder());
                     break;
                 }
                 case 2: {
-                    controller.delete(userBuilder());
+                    service.read(clientKey());
                     break;
                 }
                 case 3: {
-                    controller.update(userBuilder());
+                    service.update(clientBuilder());
                     break;
                 }
                 case 4: {
-                    System.out.println(controller.getData().toString());
+                    service.delete(clientKey());
                     break;
                 }
                 case 0: {
-                    controller.save();
                     main(new String[0]);
                 }
                 default:
@@ -103,31 +112,29 @@ public class DataManager {
         }
     }
 
-    private static void carManager() throws CarException, UserException {
-        CarService controller = new CarService();
-        controller.read();
+    private static void carManager() throws CarException, UserException, SQLException {
+        CarService service = new CarService();
         while (true) {
-            System.out.println("Choose what to do: \n1.Add\n2.Delete\n3.Update\n4.Show All\n0.Back");
+            System.out.println("Choose what to do: \n1.CREATE\n2.READ\n3.UPDATE\n4.DELETE\n0.Back");
             int choice = scan.nextInt();
             switch (choice) {
                 case 1: {
-                    controller.create(carBuilder());
+                    service.create(carBuilder());
                     break;
                 }
                 case 2: {
-                    controller.delete(carBuilder());
+                    service.read(carKey());
                     break;
                 }
                 case 3: {
-                    controller.update(carBuilder());
+                    service.update(carBuilder());
                     break;
                 }
                 case 4: {
-                    System.out.println(controller.getData().toString());
+                    service.delete(carKey());
                     break;
                 }
                 case 0: {
-                    controller.save();
                     main(new String[0]);
                 }
                 default:
@@ -136,31 +143,29 @@ public class DataManager {
         }
     }
 
-    private static void orderManager() throws CarException, UserException {
-        OrderService controller = new OrderService();
-        controller.read();
+    private static void orderManager() throws CarException, UserException, SQLException {
+        OrderService service = new OrderService();
         while (true) {
-            System.out.println("Choose what to do: \n1.Add\n2.Delete\n3.Update\n4.Show All\n0.Back");
+            System.out.println("Choose what to do: \n1.CREATE\n2.READ\n3.UPDATE\n4.DELETE\n0.Back");
             int choice = scan.nextInt();
             switch (choice) {
                 case 1: {
-                    controller.create(orderBuilder());
+                    service.create(orderBuilder());
                     break;
                 }
                 case 2: {
-                    controller.delete(orderBuilder());
+                    service.read(orderKey());
                     break;
                 }
                 case 3: {
-                    controller.update(orderBuilder());
+                    service.update(orderBuilder());
                     break;
                 }
                 case 4: {
-                    System.out.println(controller.getData().toString());
+                    service.delete(orderKey());
                     break;
                 }
                 case 0: {
-                    controller.save();
                     main(new String[0]);
                 }
                 default:
@@ -169,7 +174,7 @@ public class DataManager {
         }
     }
 
-    public static Client userBuilder() throws UserException {
+    public static Client clientBuilder() throws UserException {
         Scanner sc = new Scanner(System.in);
         Client client = new Client();
         System.out.println("Enter first name:");
@@ -177,16 +182,17 @@ public class DataManager {
         System.out.println("Enter last name:");
         client.setLastName(sc.nextLine());
         System.out.println("Enter phone number:");
-        //client.setPhoneNumber(sc.nextLine()); check this line
+        client.setPhoneNumber(sc.nextLine());
         System.out.println("Enter age:");
         client.setAge(sc.nextInt());
-        System.out.println("Enter gender:");
-        Gender gender = Gender.valueOf(sc.next().toUpperCase());
-        client.setGender(gender);
+        System.out.println("Enter category:");
+        client.setCategory(sc.next().toUpperCase());
         System.out.println("Your driving experience is more than two years? (Yes/No):");
         client.setDrivingExperience(sc.next());
-        System.out.println("Enter category:");
-        client.setCategory(sc.next());
+        System.out.println("Enter gender:");
+        client.setGender(sc.next().toUpperCase());
+        System.out.println("Enter id:");
+        client.setId(sc.nextLong());
         return client;
     }
 
@@ -202,16 +208,37 @@ public class DataManager {
         System.out.println("Enter price per hour:");
         car.setPrice(sc.nextBigDecimal());
         System.out.println("Enter id:");
-        car.setId(sc.nextInt());
+        car.setId(sc.nextLong());
         return car;
     }
 
     public static Order orderBuilder() throws CarException, UserException {
         Scanner sc = new Scanner(System.in);
         Order order = new Order();
-        order.setClient(userBuilder());
-        order.setCar(carBuilder());
+        System.out.println("Enter order id:");
+        order.setId(sc.nextLong());
         System.out.println("Enter time (in hours):");
         order.setTime(sc.nextInt());
+        System.out.println("Enter car id:");
+        order.setCarId(sc.nextLong());
+        System.out.println("Enter client id:");
+        order.setClientId(sc.nextLong());
         return order;
-    }*/
+    }
+
+    public static String carKey(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter car id: ");
+        return sc.nextLine();
+    };
+
+    public static String clientKey(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter client id: ");
+        return sc.nextLine();
+    };
+    public static String orderKey(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter order id: ");
+        return sc.nextLine();
+    };*/

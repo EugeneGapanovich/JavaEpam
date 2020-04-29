@@ -1,18 +1,35 @@
+/*
 package by.epam.carrental.service;
 
-import java.util.ArrayList;
 
-public abstract class Service<E> {
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-    public abstract void create(E entity);
+import java.sql.SQLException;
+import java.util.List;
 
-    public abstract void read();
+public abstract class Service<E, T> {
 
-    public abstract void update(E entity);
+    static Logger log = LogManager.getLogger();
 
-    public abstract void delete(E entity);
+    public abstract void create(E entity) throws SQLException;
 
-    public abstract void save();
+    public abstract void read(T key) throws SQLException;
 
-    public abstract ArrayList<E> getData();
+    public abstract void update(E entity) throws SQLException;
+
+    public abstract void delete(T key) throws SQLException;
+
+    public abstract List<E> readAll() throws SQLException;
+
+    public boolean isExist(E entity) throws SQLException{
+        List<E> data = readAll();
+        for(E element : data){
+            if(element.hashCode() == entity.hashCode()){
+                return true;
+            }
+        }
+        return false;
+    }
 }
+*/

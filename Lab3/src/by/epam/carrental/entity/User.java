@@ -8,15 +8,15 @@ import java.util.Objects;
 public abstract class User extends Entity{
     private String firstName;
     private String lastName;
-    private String phoneNumber;
+    private long id;
 
     public User() {
     }
 
-    public User(String firstName, String lastName, String phoneNumber) throws UserException{
+    public User(String firstName, String lastName, long id){
         this.firstName = firstName;
         this.lastName = lastName;
-        setPhoneNumber(phoneNumber);
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -35,16 +35,12 @@ public abstract class User extends Entity{
         this.lastName = lastName;
     }
 
-    public String getPhoneNumber(){
-        return phoneNumber;
+    public long getId() {
+        return id;
     }
 
-    public void setPhoneNumber(String phoneNumber) throws UserException{
-        if(ValidPhone.isValidPhone(phoneNumber)){
-            this.phoneNumber = phoneNumber;
-        } else{
-            throw new UserException("Bad phone number");
-        }
+    public void setId(long id) {
+        this.id = id;
     }
 
     @Override
@@ -52,14 +48,14 @@ public abstract class User extends Entity{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(firstName, user.firstName) &&
-                Objects.equals(lastName, user.lastName) &&
-                Objects.equals(phoneNumber, user.phoneNumber);
+        return id == user.id &&
+                Objects.equals(firstName, user.firstName) &&
+                Objects.equals(lastName, user.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, phoneNumber);
+        return Objects.hash(firstName, lastName, id);
     }
 
     @Override
@@ -67,7 +63,7 @@ public abstract class User extends Entity{
         return "User{" +
                 "first name='" + firstName + '\'' +
                 ", last name='" + lastName + '\'' +
-                ", phone number='" + phoneNumber + '\'' +
+                ", id=" + id +
                 '}';
     }
 }

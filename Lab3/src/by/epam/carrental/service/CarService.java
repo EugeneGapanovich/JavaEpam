@@ -1,47 +1,61 @@
 /*
+
 package by.epam.carrental.service;
 
-import by.epam.carrental.dao.CarController;
+import by.epam.carrental.dao.CarDAO;
 import by.epam.carrental.entity.Car;
+import by.epam.carrental.exception.ServiceException;
 
-import java.util.ArrayList;
+import java.sql.SQLException;
+import java.util.List;
 
-public class CarService extends Service <Car> {
+public class CarService extends Service<Car, String> {
 
-    private CarController controller;
+    private CarDAO controller;
 
     public CarService(){
-        controller = new CarController();
+        controller = new CarDAO();
     }
 
     @Override
-    public void create(Car entity) {
-        controller.create(entity);
+    public void create(Car entity) throws SQLException {
+        try{
+            if(!(isExist(entity))){
+                controller.create(entity);
+            } else{
+                throw new ServiceException("SUCH CAR IS EXIST");
+            }
+        } catch(ServiceException e){
+            log.info(e);
+        }
     }
 
     @Override
-    public void read() {
-        controller.read();
+    public void read(String key) throws SQLException{
+        controller.read(key);
     }
 
     @Override
-    public void update(Car entity) {
-        controller.update(entity);
+    public void update(Car entity) throws SQLException{
+        try{
+            if(isExist(entity)){
+                controller.create(entity);
+            } else{
+                throw new ServiceException("SUCH CAR DOES NOT EXIST");
+            }
+        } catch(ServiceException e){
+            log.info(e);
+        }
     }
 
     @Override
-    public void delete(Car entity) {
-        controller.delete(entity);
+    public void delete(String key) throws SQLException{
+        controller.delete(key);
     }
 
     @Override
-    public void save() {
-        controller.save();
-    }
-
-    @Override
-    public ArrayList<Car> getData() {
-        return controller.getData();
+    public List<Car> readAll() throws SQLException{
+        return controller.getAll();
     }
 }
 */

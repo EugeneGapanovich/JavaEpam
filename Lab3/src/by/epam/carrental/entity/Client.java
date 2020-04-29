@@ -2,11 +2,13 @@ package by.epam.carrental.entity;
 
 import by.epam.carrental.collections.Gender;
 import by.epam.carrental.exception.UserException;
+import by.epam.carrental.validator.ValidPhone;
 
 import java.util.Objects;
 
 public class Client extends User{
     private Integer age;
+    private String phoneNumber;
     private Gender gender;
     private String drivingExperience;
     private String category;
@@ -15,10 +17,12 @@ public class Client extends User{
         super();
     }
 
-    public Client(String firstName, String lastName, String phoneNumber, int age, Gender gender, String drivingExperience, String category) throws UserException {
-        super(firstName, lastName, phoneNumber);
+    public Client(String firstName, String lastName, String phoneNumber, int age, String drivingExperience
+            , String category, String gender, long id) throws UserException {
+        super(firstName, lastName, id);
+        setPhoneNumber(phoneNumber);
         this.age = age;
-        this.gender = gender;
+        this.gender = Gender.valueOf(gender);
         this.drivingExperience = drivingExperience;
         this.category = category;
     }
@@ -31,12 +35,12 @@ public class Client extends User{
         this.age = age;
     }
 
-    public Gender getGender() {
-        return gender;
+    public String getGender() {
+        return gender.toString();
     }
 
-    public void setGender(Gender gender) {
-        this.gender = gender;
+    public void setGender(String gender) {
+        this.gender = Gender.valueOf(gender.toUpperCase());
     }
 
     public String getDrivingExperience() {
@@ -55,6 +59,18 @@ public class Client extends User{
         this.category = category;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) throws UserException{
+        if(ValidPhone.isValidPhone(phoneNumber)){
+            this.phoneNumber = phoneNumber;
+        } else{
+            throw new UserException("Bad phone number");
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -62,6 +78,7 @@ public class Client extends User{
         if (!super.equals(o)) return false;
         Client client = (Client) o;
         return Objects.equals(age, client.age) &&
+                Objects.equals(phoneNumber, client.phoneNumber) &&
                 gender == client.gender &&
                 Objects.equals(drivingExperience, client.drivingExperience) &&
                 Objects.equals(category, client.category);
@@ -71,13 +88,14 @@ public class Client extends User{
     @Override
     public String toString() {
         return "Client{" +
-                "name: " + getFirstName() + '\'' +
-                "; surname: " + getLastName() + '\'' +
-                "; phone number: " + "+" + getPhoneNumber() + '\'' +
-                "; age: " + age + '\'' +
-                "; gender: " + gender + '\'' +
-                "; driving experience: " + drivingExperience + '\'' +
-                "; category: '" + category + '\'' +
+                "name='" + getFirstName() + '\'' +
+                "; surname='" + getLastName() + '\'' +
+                "; phone number='" + phoneNumber + '\'' +
+                "; age='" + age + '\'' +
+                "; gender='" + gender + '\'' +
+                "; driving experience='" + drivingExperience + '\'' +
+                "; category='" + category + '\'' +
+                "; id='" + getId() + '\'' +
                 '}';
     }
 }

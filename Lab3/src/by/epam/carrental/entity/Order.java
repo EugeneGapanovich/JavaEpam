@@ -6,17 +6,26 @@ public class Order {
     private Client client;
     private Car car;
     private Integer time;
-    private Integer id;
+    private long id;
+    private long carId;
+    private long clientId;
 
     public Order() {
 
     }
 
-    public Order(Client client, Car car, Integer time, Integer id) {
+    public Order(Client client, Car car, Integer time, long id) {
         this.client = client;
         this.car = car;
         this.time = time;
         this.id = id;
+    }
+
+    public Order(long orderId, Integer time, long carId, long clientId) {
+        this.id = orderId;
+        this.time = time;
+        this.carId = carId;
+        this.clientId = clientId;
     }
 
     public Client getClient() {
@@ -43,12 +52,28 @@ public class Order {
         this.time = time;
     }
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
+    }
+
+    public long getCarId() {
+        return carId;
+    }
+
+    public void setCarId(long carId) {
+        this.carId = carId;
+    }
+
+    public long getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(long clientId) {
+        this.clientId = clientId;
     }
 
     @Override

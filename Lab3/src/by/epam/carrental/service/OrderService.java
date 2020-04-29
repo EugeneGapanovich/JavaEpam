@@ -1,47 +1,60 @@
 /*
 package by.epam.carrental.service;
 
-import by.epam.carrental.dao.OrderController;
+import by.epam.carrental.dao.OrderDAO;
 import by.epam.carrental.entity.Order;
+import by.epam.carrental.exception.ServiceException;
 
-import java.util.ArrayList;
+import java.sql.SQLException;
+import java.util.List;
 
-public class OrderService extends Service<Order> {
+public class OrderService extends Service<Order, String> {
 
-    private OrderController controller;
+    private OrderDAO controller;
 
     public OrderService(){
-        controller = new OrderController();
+        controller = new OrderDAO();
     }
 
     @Override
-    public void create(Order entity) {
-        controller.create(entity);
+    public void create(Order entity) throws SQLException {
+        try{
+            if(!(isExist(entity))){
+                controller.create(entity);
+            } else{
+                throw new ServiceException("SUCH ORDER IS EXIST");
+            }
+        } catch(ServiceException e){
+            log.info(e);
+        }
     }
 
     @Override
-    public void read() {
-        controller.read();
+    public void read(String key) throws SQLException {
+        controller.read(key);
     }
 
     @Override
-    public void update(Order entity) {
-        controller.update(entity);
+    public void update(Order entity) throws SQLException {
+        try{
+            if(isExist(entity)){
+                controller.update(entity);
+            } else{
+                throw new ServiceException("SUCH ORDER DOES NOT EXIST");
+            }
+        } catch(ServiceException e){
+            log.info(e);
+        }
     }
 
     @Override
-    public void delete(Order entity) {
-        controller.delete(entity);
+    public void delete(String key) throws SQLException {
+        controller.delete(key);
     }
 
     @Override
-    public void save() {
-        controller.save();
-    }
-
-    @Override
-    public ArrayList<Order> getData() {
-        return controller.getData();
+    public List<Order> readAll() throws SQLException{
+        return controller.getAll();
     }
 }
 */
