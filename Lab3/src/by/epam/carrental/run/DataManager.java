@@ -22,10 +22,10 @@ public class DataManager {
 
     public static void main(String[] args) throws CarException, UserException, SQLException {
 
-        Car car = new Car("A", "RAPID", 2018, BigDecimal.valueOf(10), (long) 100);
+        Car car = new Car("SKODA", "RAPID", 2018, BigDecimal.valueOf(10), (long) 100);
         Car carr = new Car("W", "X5", 2018, BigDecimal.valueOf(10), (long) 200);
         Car carUpdated = new Car("SKODA", "RAPIDD", 2019, BigDecimal.valueOf(10), (long) 10);
-        CarDAO carDao = new CarDAO();
+        //CarDAO carDao = new CarDAO();
         //carDao.create(car);
         //carDao.create(carr);
         //carDao.read("10");
@@ -48,8 +48,8 @@ public class DataManager {
                 ,"yes","B","MALE",(long) 28);
         Client clientUpdated = new Client("CL","cl","+375331234567",21
                 ,"yes","B","MALE",(long) 20);
-        //ClientDAO clientDao = new ClientDAO();
-        //clientDao.create(client);
+        ClientDAO clientDao = new ClientDAO();
+        //lientDao.create(client);
         //clientDao.create(clientt);
         //clientDao.read("28");
         //clientDao.update(clientUpdated);
