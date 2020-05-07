@@ -24,7 +24,7 @@ public class CarRestController {
     @GetMapping("{id}")
     public ResponseEntity<Car> getCar(@PathVariable Long id){
         try{
-            return ResponseEntity.ok(carService.read(id.toString()));
+            return ResponseEntity.ok(carService.read(id));
         } catch(IncorrectResultSizeDataAccessException e){
             return ResponseEntity.notFound().build();
         }
@@ -44,7 +44,7 @@ public class CarRestController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<Void> deleteCar(@PathVariable Long id){
-        carService.delete(id.toString());
+        carService.delete(id);
         return ResponseEntity.noContent().build();
     }
 

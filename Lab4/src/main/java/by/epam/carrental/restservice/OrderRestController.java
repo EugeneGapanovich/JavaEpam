@@ -24,7 +24,7 @@ public class OrderRestController {
     @GetMapping("{id}")
     public ResponseEntity<Order> getOrder(@PathVariable Long id) {
         try{
-            return ResponseEntity.ok(orderService.read(id.toString()));
+            return ResponseEntity.ok(orderService.read(id));
         } catch (IncorrectResultSizeDataAccessException e){
             return ResponseEntity.notFound().build();
         }
@@ -44,7 +44,7 @@ public class OrderRestController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<Void> deleteOrder(@PathVariable Long id){
-        orderService.delete(id.toString());
+        orderService.delete(id);
         return ResponseEntity.noContent().build();
     }
 }

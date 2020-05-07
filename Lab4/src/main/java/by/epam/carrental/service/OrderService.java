@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class OrderService extends Service<Order, String> {
+public class OrderService extends Service<Order, Long> {
 
     @Autowired
     private OrderDAO controller;
@@ -28,14 +28,14 @@ public class OrderService extends Service<Order, String> {
     }
 
     @Override
-    public Order read(String key) {
+    public Order read(Long key) {
         return controller.read(key);
     }
 
     @Override
     public void update(Order entity) {
         try{
-            if(isExist(entity)){
+            if(isExistByKey(entity.getId())){
                 controller.update(entity);
             } else{
                 throw new ServiceException("SUCH ORDER DOES NOT EXIST");
@@ -46,7 +46,7 @@ public class OrderService extends Service<Order, String> {
     }
 
     @Override
-    public void delete(String key) {
+    public void delete(Long key) {
         try{
             if(isExistByKey(key)){
                 controller.delete(key);

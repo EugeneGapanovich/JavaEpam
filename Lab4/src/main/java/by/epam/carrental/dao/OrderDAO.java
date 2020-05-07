@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class OrderDAO implements DAO<Order, String> {
+public class OrderDAO implements DAO<Order, Long> {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -20,7 +20,7 @@ public class OrderDAO implements DAO<Order, String> {
         String command = "INSERT INTO ORDERC(ORDER_ID" +
                                             ",ORDER_TIME" +
                                             ",ORDER_CARID" +
-                                            ",ORDER_CLIENTID" +
+                                            ",ORDER_CLIENTID)" +
                                             " Values (?, ?, ?, ?)";
         return jdbcTemplate.update(command, entity.getId()
                                             ,entity.getTime()
@@ -31,7 +31,7 @@ public class OrderDAO implements DAO<Order, String> {
     }
 
     @Override
-    public Order read(String key) {
+    public Order read(Long key) {
         String command = "SELECT * FROM ORDERC WHERE ORDER_ID = ?";
         return jdbcTemplate.queryForObject(command, new Object[]{key}, new OrderMapper());
     }
@@ -42,15 +42,15 @@ public class OrderDAO implements DAO<Order, String> {
                                             ",ORDER_CARID = ?" +
                                             ",ORDER_CLIENTID = ? " +
                          "WHERE ORDER_ID = ?";
-        return jdbcTemplate.update(command, entity.getId()
-                                            ,entity.getTime()
+        return jdbcTemplate.update(command, entity.getTime()
                                             ,entity.getCarId()
                                             ,entity.getClientId()
+                                            ,entity.getId()
         ) > 0;
     }
 
     @Override
-    public boolean delete(String key) {
+    public boolean delete(Long key) {
         String command = "DELETE FROM ORDERC WHERE ORDER_ID = ?";
         return jdbcTemplate.update(command, key) > 0;
     }

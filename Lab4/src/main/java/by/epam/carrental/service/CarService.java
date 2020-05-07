@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class CarService extends Service<Car, String> {
+public class CarService extends Service<Car, Long> {
 
     @Autowired
     private CarDAO controller;
@@ -29,15 +29,15 @@ public class CarService extends Service<Car, String> {
     }
 
     @Override
-    public Car read(String key) {
+    public Car read(Long key) {
         return controller.read(key);
     }
 
     @Override
     public void update(Car entity) {
         try{
-            if(isExist(entity)){
-                controller.create(entity);
+            if(isExistByKey(entity.getId())){
+                controller.update(entity);
             } else{
                 throw new ServiceException("SUCH CAR DOES NOT EXIST");
             }
@@ -47,7 +47,7 @@ public class CarService extends Service<Car, String> {
     }
 
     @Override
-    public void delete(String key) {
+    public void delete(Long key) {
         try{
             if(isExistByKey(key)){
                 controller.delete(key);

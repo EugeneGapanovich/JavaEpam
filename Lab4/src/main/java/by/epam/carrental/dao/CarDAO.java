@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class CarDAO implements DAO<Car, String> {
+public class CarDAO implements DAO<Car, Long> {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -32,7 +32,7 @@ public class CarDAO implements DAO<Car, String> {
     }
 
     @Override
-    public Car read(String key) {
+    public Car read(Long key) {
             Car car = new Car();
             String command = "SELECT * FROM CAR WHERE CAR_ID = ?";
             return jdbcTemplate.queryForObject(command, new Object[]{key}, new CarMapper());
@@ -50,7 +50,7 @@ public class CarDAO implements DAO<Car, String> {
     }
 
     @Override
-    public boolean delete(String key) {
+    public boolean delete(Long key) {
         String command = "DELETE FROM CAR WHERE CAR_ID = ?";
         return jdbcTemplate.update(command, key) > 0;
     }

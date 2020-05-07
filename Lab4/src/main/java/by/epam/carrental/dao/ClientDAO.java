@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class ClientDAO implements DAO<Client, String> {
+public class ClientDAO implements DAO<Client, Long> {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -38,7 +38,7 @@ public class ClientDAO implements DAO<Client, String> {
     }
 
     @Override
-    public Client read(String key) {
+    public Client read(Long key) {
         String command = "SELECT * FROM CLIENT WHERE CLIENT_ID = ?";
         return jdbcTemplate.queryForObject(command, new Object[]{key}, new ClientMapper());
     }
@@ -65,7 +65,7 @@ public class ClientDAO implements DAO<Client, String> {
     }
 
     @Override
-    public boolean delete(String key) {
+    public boolean delete(Long key) {
         String command = "DELETE FROM CLIENT WHERE CLIENT_ID = ?";
         return jdbcTemplate.update(command, key) > 0;
     }

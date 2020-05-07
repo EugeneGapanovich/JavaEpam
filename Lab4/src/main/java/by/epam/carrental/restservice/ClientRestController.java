@@ -24,7 +24,7 @@ public class ClientRestController {
     @GetMapping("{id}")
     public ResponseEntity<Client> getClient(@PathVariable Long id){
         try{
-            return ResponseEntity.ok(clientService.read(id.toString()));
+            return ResponseEntity.ok(clientService.read(id));
         } catch (IncorrectResultSizeDataAccessException e){
             return ResponseEntity.notFound().build();
         }
@@ -44,7 +44,7 @@ public class ClientRestController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<Void> deleteClient(@PathVariable Long id){
-        clientService.delete(id.toString());
+        clientService.delete(id);
         return ResponseEntity.noContent().build();
     }
 
